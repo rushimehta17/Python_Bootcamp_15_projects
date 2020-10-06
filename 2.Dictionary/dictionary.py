@@ -1,9 +1,21 @@
 import json
 from difflib import get_close_matches
+"""
+json to open json data file
+from difflib get_close_matches to get close match
+so that minor spelling error of user can be corrected
+"""
 
 data = json.load(open("2.Dictionary\data.json"))
 
 def translate(word):
+"""
+    get the word from user,
+    check in lower case for match,
+    other wise check for title and then in uppercase.
+
+    if there is minor smelling mistake that can be also corrected.
+"""
     word = word.lower()
     if word in data:
         return data[word]
